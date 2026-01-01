@@ -47,16 +47,13 @@ Contrairement à la pondération qui donne plus d'importance aux erreurs, SMOTE 
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
 * **Conclusion** Le modèle est toujours performant accuracy 91% , mais il échoue toujours sur la détection des 2 cas high.
 
-
 #### 6. Test de l'ajustement du seuil de décision pour la gestion du risque critique
-Contrairement à la pondération qui donne plus d'importance aux erreurs, SMOTE agit directement sur la structure du jeu de données
-* **Initialisation de SMOTE** : J'ai configuré l'algorithme pour équilibrer automatiquement les classes de risque en créant des données synthétiques basées sur les deux plus proches voisins.
-* **Application du rééquilibrage** : J'ai appliqué SMOTE exclusivement sur mes données d'entraînement pour corriger le fort déséquilibre sans biaiser mon jeu de validation.
-* **Entraînement optimisé** : J'ai entraîné mon modèle de Deep Learning sur les données resamplées pour garantir une reconnaissance équitable de chaque niveau de risque.
-* **Prédiction sur les données** de validation on utilise le modèle entraîné sur les données SMOTE.
+Abaissement du seuil de décision de la classe "High" à 0.15 pour augmenter la sensibilité du modèle et garantir une détection des cas les plus critiques.
+* **récupèration** des scores de confiance pour chaque classe
+* **Changement du seuil** pour la classe 'high' qui passe à 0.15
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
-* **Conclusion** Le modèle est toujours performant accuracy 91% , mais il échoue toujours sur la détection des 2 cas high
-
+* **Conclusion** Malgré un ajustement de seuil à 0.15, le recall pour les patientes high reste à 0.00.
+* Le modèle ne remplit pas son rôle d'alerte. Cette étape démontre qu'un seuil de 0.15 est insuffisant.
 
 
 
