@@ -12,12 +12,12 @@
 ### Démarche Méthodologique 
 
 #### 1. Analyse Exploratoire des données 
+Pour préparer les données, j'ai mis en place les étapes suivantes :
 * J'ai commencé par un nettoyage des données (présence de doublon, suppression des colonnes inutiles, sélection du cancer du sein uniquement ) 
 * Exploration des 21 variables (Age, BMI, Smoking, Genetic factors, etc.).
 * **Observation clé** : J'ai identifié un déséquilibre de classe majeur (19.3% classe "low", 77,8 % de risque "Medium"et 2.8% classe "high").
   
 #### 2.  Réseau de neurones artificiels avec **TensorFlow/Keras**
-Pour préparer les données, j'ai mis en place les étapes suivantes :
 * **Répartition  :** répartition des groupe pour l'entrainement et le test.
 * **Normalisation :** Utilisation du `StandardScaler` pour mettre à l'échelle les variables numériques.
 * **Encodage :** On transforme les réponses en vecteurs via le One-Hot encoding pour les 3 catégories.
