@@ -11,7 +11,7 @@
 
 ### Démarche Méthodologique 
 
-#### 1. Analyse Exploratoire des données 
+#### 1. Analyse exploratoire des données 
 Pour préparer les données, j'ai mis en place les étapes suivantes :
 * J'ai commencé par un nettoyage des données (présence de doublon, suppression des colonnes inutiles, sélection du cancer du sein uniquement ) 
 * Exploration des 21 variables (Age, BMI, Smoking, Genetic factors, etc.).
@@ -38,7 +38,7 @@ Pour préparer les données, j'ai mis en place les étapes suivantes :
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
 * **Conclusion** Malgré les 91 % de bonnes prédictions, il échoue à identifier les urgences vitales.
 
-#### 5. Test de l'Équilibrage par augmentation de données synthétiques (SMOTE)
+#### 5. Test de l'équilibrage par augmentation de données synthétiques (SMOTE)
 Contrairement à la pondération qui donne plus d'importance aux erreurs, SMOTE agit directement sur la structure du jeu de données
 * **Initialisation de SMOTE** : J'ai configuré l'algorithme pour équilibrer automatiquement les classes de risque en créant des données synthétiques basées sur les deux plus proches voisins.
 * **Application du rééquilibrage** : J'ai appliqué SMOTE exclusivement sur mes données d'entraînement pour corriger le fort déséquilibre sans biaiser mon jeu de validation.
@@ -46,6 +46,17 @@ Contrairement à la pondération qui donne plus d'importance aux erreurs, SMOTE 
 * **Prédiction sur les données** de validation on utilise le modèle entraîné sur les données SMOTE.
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
 * **Conclusion** Le modèle est toujours performant accuracy 91% , mais il échoue toujours sur la détection des 2 cas high.
+
+
+#### 6. Test de l'ajustement du seuil de décision pour la gestion du risque critique
+Contrairement à la pondération qui donne plus d'importance aux erreurs, SMOTE agit directement sur la structure du jeu de données
+* **Initialisation de SMOTE** : J'ai configuré l'algorithme pour équilibrer automatiquement les classes de risque en créant des données synthétiques basées sur les deux plus proches voisins.
+* **Application du rééquilibrage** : J'ai appliqué SMOTE exclusivement sur mes données d'entraînement pour corriger le fort déséquilibre sans biaiser mon jeu de validation.
+* **Entraînement optimisé** : J'ai entraîné mon modèle de Deep Learning sur les données resamplées pour garantir une reconnaissance équitable de chaque niveau de risque.
+* **Prédiction sur les données** de validation on utilise le modèle entraîné sur les données SMOTE.
+* **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
+* **Conclusion** Le modèle est toujours performant accuracy 91% , mais il échoue toujours sur la détection des 2 cas high
+
 
 
 
