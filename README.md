@@ -27,7 +27,7 @@ Pour préparer les données, j'ai mis en place les étapes suivantes :
 * Le modèle ne peut pas être déployé en l'état car il présente un risque de sécurité présence de faux négatifs sur les cas graves.
 
 #### 3. Analyse de l'Influence des Facteurs par matrice de corrélation 
-* réalisation d'une matrice de Corrélation des Facteurs de Risque du Cancer du Sein 
+* **réalisation d'une matrice de Corrélation** des Facteurs de Risque du Cancer du Sein 
 * **Conclusion** : Bien que la matrice de corrélation souligne l'influence des facteurs environnementaux (Alcool, Pollution)
 * Elle reste un outil limité, elle ne détecte pas les interactions complexes
 
@@ -36,6 +36,17 @@ Pour préparer les données, j'ai mis en place les étapes suivantes :
 * **Entraînement** avec les poids calculés.
 * **Prédiction** à nouveau sur le jeu de validation
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
+* **Conclusion** Malgré les 91 % de bonnes prédictions, il échoue à identifier les urgences vitales.
+
+#### 5. Test de l'Équilibrage par augmentation de données synthétiques (SMOTE)
+Contrairement à la pondération qui donne plus d'importance aux erreurs, SMOTE agit directement sur la structure du jeu de données
+* ** Initialiseation de SMOTE**:
+* **Structure :** Une architecture multicouche pour extraire les corrélations complexes entre les facteurs.
+* **Régularisation : J'ai intégré des couches *Dropout* pour éviter le surapprentissage.
+
+
+
+
 
 
 
