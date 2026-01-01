@@ -121,5 +121,5 @@ L'ajustement du seuil de décision assure une détection des cas critiques pour 
 ### Structure du dépôt
 * `cancer-risk-factors.csv` : Jeu de données source.
 * `deep_learning.ipynb` : Programme complet avec analyses et graphiques.
-* 'read me` : Résumé du projet 
+* 'readme` : Résumé du projet 
 
