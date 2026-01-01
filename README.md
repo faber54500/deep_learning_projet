@@ -18,6 +18,7 @@ Pour préparer les données, j'ai mis en place les étapes suivantes :
 * **Observation clé** : J'ai identifié un déséquilibre de classe majeur (19.3% classe "low", 77,8 % de risque "Medium"et 2.8% classe "high").
   
 #### 2.  Réseau de neurones artificiels avec **TensorFlow/Keras**
+Normalisation  des données conception et entraînement d'un réseau de neurones séquentiel optimisé pour classifier précisément les patientes selon leur niveau de risque de cancer.
 * **Répartition  :** répartition des groupe pour l'entrainement et le test.
 * **Normalisation :** Utilisation du `StandardScaler` pour mettre à l'échelle les variables numériques.
 * **Encodage :** On transforme les réponses en vecteurs via le One-Hot encoding pour les 3 catégories.
@@ -27,11 +28,13 @@ Pour préparer les données, j'ai mis en place les étapes suivantes :
 * Le modèle ne peut pas être déployé en l'état car il présente un risque de sécurité présence de faux négatifs sur les cas graves.
 
 #### 3. Analyse de l'Influence des Facteurs par matrice de corrélation 
+Génération d'une matrice de corrélation et d'une heatmap pour identifier et visualiser les facteurs de risque ayant la plus forte influence statistique sur le niveau de risque de cancer
 * **Réalisation d'une matrice de Corrélation** des Facteurs de Risque du Cancer du Sein 
 * **Conclusion** : Bien que la matrice de corrélation souligne l'influence des facteurs environnementaux (Alcool, Pollution)
 * Elle reste un outil limité, elle ne détecte pas les interactions complexes
 
 #### 4. Modèle avec équilibrage des classes par calcul de poids
+Application d'une pondération des classes (class_weight) lors du réentraînement pour corriger le déséquilibre des données et forcer le modèle à accorder plus d'importance aux catégories minoritaires du risque élevé.
 * **Calcule automatiquement** des poids, plus une catégorie est petite, plus son poids devient grand.
 * **Entraînement** avec les poids calculés.
 * **Prédiction** à nouveau sur le jeu de validation
