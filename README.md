@@ -20,7 +20,7 @@ Pour préparer les données, j'ai mis en place les étapes suivantes :
 #### 2.  Réseau de neurones artificiels avec **TensorFlow/Keras**
 Normalisation  des données conception et entraînement d'un réseau de neurones séquentiel optimisé pour classifier précisément les patientes selon leur niveau de risque de cancer.
 * **Répartition  :** répartition des groupe pour l'entrainement et le test.
-* **Normalisation :** Utilisation du `StandardScaler` pour mettre à l'échelle les variables numériques.
+* **Normalisation :** Utilisation du StandardScaler pour mettre à l'échelle les variables numériques.
 * **Encodage :** On transforme les réponses en vecteurs via le One-Hot encoding pour les 3 catégories.
 * **Construction et entraînement du réseau de neurones** : Initialisation du modèle, démarrage de l'entraînement.
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
