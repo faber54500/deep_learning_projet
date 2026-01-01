@@ -1,4 +1,4 @@
-## <font color=darkred> **DM de Deep Learning** : Classification du Risque Cancérologique
+## <font color=darkred> **Deep Learning** : Classification du Risque Cancérologique
 
 ###  Introduction et Contexte
 * Ce projet s'inscrit dans une démarche d'aide au diagnostic pour un cabinet médical.
