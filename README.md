@@ -81,10 +81,20 @@ Couplage du rééquilibrage des données par SMOTE et de l'ajustement dynamique 
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
 * **Conclusion** Le modèle identifie avec succès les 2 patientes à risque élevé présentes dans les données
     
-#### 5. Optimisation de la Sécurité Médicale
-Dans la phase finale, **je me suis concentré** sur l'ajustement du seuil de décision :
-* **Priorité au Rappel :** **J'ai calibré** le seuil de probabilité pour minimiser les faux négatifs.
-* **Résultat :** Mon modèle atteint un **Rappel (Recall) de 100%** sur la classe "High", garantissant qu'aucun profil à haut risque ne soit ignoré.
+#### 9.Test équilibrage hybride SMOTE-Tomek et Optimisation du Rappel
+Couplage de la technique SMOTE-Tomek au calibrage d'un seuil de décision critique pour garantir un rappel de 100% sur l'identification des patientes à haut risque.
+* **Équilibrage et Nettoyage avec SMOTE-Tomek**
+* **Entraînement du modèle**
+* **sélection** de la probabilité la plus basse parmi les cas réels à haut risque pour fixer un seuil de sécurité garantissant un rappel de 100 %.
+* **# Application du nouveau seuil**
+* **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
+* **Conclusion** Le modèle identifie avec succès les 2 patientes à risque élevé présentes dans les données
+Cette approche permet d'améliorer la précision de la classe "High" en passant 0.33 à 0.40 pour la précision high
+
+
+
+
+
 
 ---
 
