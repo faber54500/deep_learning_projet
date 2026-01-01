@@ -60,10 +60,15 @@ Abaissement du seuil de décision de la classe "High" à 0.15 pour augmenter la 
 
 
 
-#### 3. Architecture du Modèle Deep Learning
-**J'ai utilisé un réseau de neurones artificiels avec **TensorFlow/Keras** :
-* **Structure :** Une architecture multicouche pour extraire les corrélations complexes entre les facteurs.
-* **Régularisation : J'ai intégré des couches *Dropout* pour éviter le surapprentissage.
+#### 7. Test du Modèle avec un seuil de sécurité optimisé à 100% de rappel
+Au lieu de laisser le modèle choisir la classe la plus probable, méthode par défaut on force la détection dès l'apparition d'un signal faible.
+En calant le curseur sur la probabilité la plus basse attribuée à une vraie malade (final_threshold).
+* **abaissement** du seuil de décision pour ne rater aucun cas de risque élevé (High), même si celui-ci n'est pas majoritaire
+* **transformation** des vecteurs complexes en une liste de chiffres simples
+* **classement** On regarde si la probabilité du risque High (indice 2) atteint ou dépasse le seuil
+* Si le risque de danger n'est pas détecté, on choisit la classe qui a le score le plus élevé entre Low (0) et Medium (1)
+* **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
+* **Conclusion** Rappel de 100% sur le risque "High", ce réglage permet de détecter la totalité des patientes à haut risque (2 sur 2).
 
 #### 4. Algorithmique d'Ensemble : Balanced Random Forest
 J'ai testé un modèle de forêt aléatoire équilibrée :
