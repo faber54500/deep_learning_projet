@@ -58,8 +58,6 @@ Abaissement du seuil de décision de la classe "High" à 0.15 pour augmenter la 
 * **Conclusion** Malgré un ajustement de seuil à 0.15, le recall pour les patientes high reste à 0.00.
 * Le modèle ne remplit pas son rôle d'alerte. Cette étape démontre qu'un seuil de 0.15 est insuffisant.
 
-
-
 #### 7. Test du Modèle avec un seuil de sécurité optimisé à 100% de rappel
 Au lieu de laisser le modèle choisir la classe la plus probable, méthode par défaut on force la détection dès l'apparition d'un signal faible.
 En calant le curseur sur la probabilité la plus basse attribuée à une vraie malade (final_threshold).
@@ -70,12 +68,19 @@ En calant le curseur sur la probabilité la plus basse attribuée à une vraie m
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
 * **Conclusion** Rappel de 100% sur le risque "High", ce réglage permet de détecter la totalité des patientes à haut risque (2 sur 2).
 
-#### 4. Algorithmique d'Ensemble : Balanced Random Forest
-J'ai testé un modèle de forêt aléatoire équilibrée :
-* **Équilibrage :** Utilisation d'une stratégie de sous-échantillonnage pour corriger le biais du dataset.
-* Cette méthode m'a permis d'obtenir une bien meilleure sensibilité sur les classes minoritaires (Low et High).
 
-
+#### 8. Test rééquilibrage SMOTE et optimisation du rappel critique
+Couplage du rééquilibrage des données par SMOTE et de l'ajustement dynamique du seuil de décision pour garantir une détection exhaustive (100% de rappel) des patientes à haut risque
+* **Équilibrage :** Équilibrage des données avec SMOTE, on augmente la représentation de la classe minoritaire pour aider le neurone
+* **Entraînement du modèle** Cette méthode m'a permis d'obtenir une bien meilleure sensibilité sur les classes minoritaires (Low et High).
+* **Renvoye des probabilités brutes** pour chaque catégorie (Low, Medium, High)
+* **Création des probabilités pour la classe 'High'**
+* **convertion** au format "One-Hot" (ex: [0, 0, 1]) en un index numérique simple (ex: 2)
+* **définition** du seuil de décision basé sur la probabilité la plus basse d'un cas réel "High" afin de garantir un rappel de 100% pour la détection des risques critiques.
+* **Application du nouveau seuil**
+* **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
+* **Conclusion** Le modèle identifie avec succès les 2 patientes à risque élevé présentes dans les données
+    
 #### 5. Optimisation de la Sécurité Médicale
 Dans la phase finale, **je me suis concentré** sur l'ajustement du seuil de décision :
 * **Priorité au Rappel :** **J'ai calibré** le seuil de probabilité pour minimiser les faux négatifs.
