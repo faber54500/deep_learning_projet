@@ -92,19 +92,21 @@ Couplage de la technique SMOTE-Tomek au calibrage d'un seuil de décision critiq
 Cette approche permet d'améliorer la précision de la classe "High" en passant 0.33 à 0.40 pour la précision high
 
     
-#### 10.Test équilibrage hybride SMOTE-Tomek et Optimisation du Rappel
-Couplage de la technique SMOTE-Tomek au calibrage d'un seuil de décision critique pour garantir un rappel de 100% sur l'identification des patientes à haut risque.
-* **Équilibrage et Nettoyage avec SMOTE-Tomek**
-* **Entraînement du modèle**
-* **sélection** de la probabilité la plus basse parmi les cas réels à haut risque pour fixer un seuil de sécurité garantissant un rappel de 100 %.
-* **# Application du nouveau seuil**
+#### 10.Test balanced random forest
+
+* **Conversion des étiquettes, One-Hot vers Labels simples**
+* **Initialisation du modèle Balanced Random Forest**
+* **Entrainement** 
+* **Extraction des probabilités brutes** pour chaque classe afin d'analyser les nuances du modèle.
+* Isolation du score de risque 'High' (index 2) pour détecter les signaux faibles de danger.
+* **Calcul du seuil** pour maintenir 100% de rappel, on cherche la probabilité la plus basse attribuée aux vrais cas High
+* **Application de la décision** finale avec priorité à la sécurité
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
-* **Conclusion** Le modèle identifie avec succès les 2 patientes à risque élevé présentes dans les données
-Cette approche permet d'améliorer la précision de la classe "High" en passant 0.33 à 0.40 pour la précision high
-
-
-
-
+* **Conclusion** Balanced Random Forest est la solution la plus performante et la plus stable
+Le modèle identifie les 2 patientes à risque élevé sans aucune erreur. La matrice de confusion montre que la colonne des erreurs pour la ligne "High" est à 0.
+Performance sur les cas sains (Low = 1.00)
+Pour la première fois, le modèle atteint un rappel de 100% pour la classe Low
+le F1 score de 0.95 est le score le plus élevé de tous les modèles testés
 
 ---
 
