@@ -5,33 +5,32 @@
 * Actuellement, le dépistage du cancer du sein repose principalement sur l'âge des patientes.
 * Cependant, le risque est une donnée multifactorielle qui ne peut se limiter à un seul critère.
 
-**L'objectif de mon modèle** est d'élargir les recommandations de dépistage en intégrant 21 critères biologiques et environnementaux. **J'ai utilisé** le jeu de données `tarekmasryo/cancer-risk-factors` pour classifier le risque en trois catégories (**Low, Medium, High**) afin d'automatiser l'identification des patientes nécessitant un suivi prioritaire.
+**L'objectif de mon modèle** est d'élargir les recommandations de dépistage en intégrant 21 critères biologiques et environnementaux. J'ai utilisé le jeu de données `cancer-risk-factors` pour classifier le risque en trois catégories (**Low, Medium, High**).
 
 ---
 
-### 🛠️ Ma Démarche Méthodologique (Pas à Pas)
+### Démarche Méthodologique 
 
-#### 1. Analyse Exploratoire des Données (EDA)
-**J'ai commencé** par un audit complet du dataset pour comprendre la distribution des facteurs de risque :
+#### 1. Analyse Exploratoire des Données 
+* J'ai commencé par une caratérisation des données
 * **Analyse structurelle :** Exploration des 21 variables (Age, BMI, Smoking, Genetic factors, etc.).
-* **Observation clé :** **J'ai identifié** un déséquilibre de classe majeur (77,8 % de risque "Medium"). Ce constat m'a poussé à adopter une stratégie spécifique pour ne pas négliger les cas à haut risque.
-
+* **Observation clé :** **J'ai identifié** un déséquilibre de classe majeur (19.3% classe "low", 77,8 % de risque "Medium"et 2.8% classe "high").
+* 
 #### 2. Pipeline de Prétraitement
-Pour préparer les données, **j'ai mis en place** les étapes suivantes :
+Pour préparer les données, j'ai mis en place les étapes suivantes :
 * **Normalisation :** Utilisation du `StandardScaler` pour mettre à l'échelle les variables numériques.
 * **Encodage :** Transformation des données textuelles en formats numériques.
-* **Stratification :** **J'ai découpé** les données en ensembles d'entraînement et de validation en veillant à conserver la proportion réelle de chaque classe.
+* **Stratification : J'ai découpé les données en ensembles d'entraînement et de validation en veillant à conserver la proportion réelle de chaque classe.
 
 #### 3. Architecture du Modèle Deep Learning
-**J'ai conçu** un réseau de neurones artificiels (ANN) avec **TensorFlow/Keras** :
+**J'ai utilisé un réseau de neurones artificiels avec **TensorFlow/Keras** :
 * **Structure :** Une architecture multicouche pour extraire les corrélations complexes entre les facteurs.
-* **Régularisation :** **J'ai intégré** des couches *Dropout* pour éviter le surapprentissage.
+* **Régularisation : J'ai intégré des couches *Dropout* pour éviter le surapprentissage.
 
 #### 4. Algorithmique d'Ensemble : Balanced Random Forest
-En complément, **j'ai implémenté** un modèle de forêt aléatoire équilibrée :
+J'ai testé un modèle de forêt aléatoire équilibrée :
 * **Équilibrage :** Utilisation d'une stratégie de sous-échantillonnage pour corriger le biais du dataset.
-* **Apport :** Cette méthode m'a permis d'obtenir une bien meilleure sensibilité sur les classes minoritaires (Low et High).
-
+* Cette méthode m'a permis d'obtenir une bien meilleure sensibilité sur les classes minoritaires (Low et High).
 
 
 #### 5. Optimisation de la Sécurité Médicale
