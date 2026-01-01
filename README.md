@@ -18,9 +18,11 @@
   
 #### 2.  Réseau de neurones artificiels avec **TensorFlow/Keras**
 Pour préparer les données, j'ai mis en place les étapes suivantes :
+* **Répartition  :** répartition des groupe pour l'entrainement et le test.
 * **Normalisation :** Utilisation du `StandardScaler` pour mettre à l'échelle les variables numériques.
-* **Encodage :** Transformation des données textuelles en formats numériques.
-* **Stratification : J'ai découpé les données en ensembles d'entraînement et de validation en veillant à conserver la proportion réelle de chaque classe.
+* **Encodage :** On transforme les réponses en vecteurs via le One-Hot encoding pour les 3 catégories.
+* **Construction et entraînement du réseau de neurones** : Initialisation du modèle, démarrage de l'entraînement.
+* **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
 
 #### 3. Architecture du Modèle Deep Learning
 **J'ai utilisé un réseau de neurones artificiels avec **TensorFlow/Keras** :
