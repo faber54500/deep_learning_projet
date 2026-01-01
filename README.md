@@ -27,11 +27,15 @@ Pour préparer les données, j'ai mis en place les étapes suivantes :
 * Le modèle ne peut pas être déployé en l'état car il présente un risque de sécurité présence de faux négatifs sur les cas graves.
 
 #### 3. Analyse de l'Influence des Facteurs par matrice de corrélation 
-*réalisation d'une matrice de Corrélation des Facteurs de Risque du Cancer du Sein 
+* réalisation d'une matrice de Corrélation des Facteurs de Risque du Cancer du Sein 
 * **Conclusion** : Bien que la matrice de corrélation souligne l'influence des facteurs environnementaux (Alcool, Pollution)
 * Elle reste un outil limité, elle ne détecte pas les interactions complexes
 
-
+#### 4. Modèle avec équilibrage des classes par calcul de poids
+* **calcule automatiquement** des poids, plus une catégorie est petite, plus son poids devient grand.
+* **Entraînement** avec les poids calculés.
+* **Prédiction** à nouveau sur le jeu de validation
+* **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
 
 
 
