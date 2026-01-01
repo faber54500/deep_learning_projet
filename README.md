@@ -40,11 +40,9 @@ Pour préparer les données, j'ai mis en place les étapes suivantes :
 
 #### 5. Test de l'Équilibrage par augmentation de données synthétiques (SMOTE)
 Contrairement à la pondération qui donne plus d'importance aux erreurs, SMOTE agit directement sur la structure du jeu de données
-* ** Initialiseation de SMOTE**:
-* **Structure :** Une architecture multicouche pour extraire les corrélations complexes entre les facteurs.
-* **Régularisation : J'ai intégré des couches *Dropout* pour éviter le surapprentissage.
-
-
+* **Initialisation de SMOTE** : J'ai configuré l'algorithme pour équilibrer automatiquement les classes de risque en créant des données synthétiques basées sur les deux plus proches voisins.
+* **Application du rééquilibrage** : J'ai appliqué SMOTE exclusivement sur mes données d'entraînement pour corriger le fort déséquilibre sans biaiser mon jeu de validation.
+* **Entraînement optimisé** : J'ai entraîné mon modèle de Deep Learning sur les données resamplées pour garantir une reconnaissance équitable de chaque niveau de risque.
 
 
 
