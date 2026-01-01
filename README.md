@@ -32,7 +32,7 @@ Pour préparer les données, j'ai mis en place les étapes suivantes :
 * Elle reste un outil limité, elle ne détecte pas les interactions complexes
 
 #### 4. Modèle avec équilibrage des classes par calcul de poids
-* **calcule automatiquement** des poids, plus une catégorie est petite, plus son poids devient grand.
+* **Calcule automatiquement** des poids, plus une catégorie est petite, plus son poids devient grand.
 * **Entraînement** avec les poids calculés.
 * **Prédiction** à nouveau sur le jeu de validation
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
@@ -43,8 +43,9 @@ Contrairement à la pondération qui donne plus d'importance aux erreurs, SMOTE 
 * **Initialisation de SMOTE** : J'ai configuré l'algorithme pour équilibrer automatiquement les classes de risque en créant des données synthétiques basées sur les deux plus proches voisins.
 * **Application du rééquilibrage** : J'ai appliqué SMOTE exclusivement sur mes données d'entraînement pour corriger le fort déséquilibre sans biaiser mon jeu de validation.
 * **Entraînement optimisé** : J'ai entraîné mon modèle de Deep Learning sur les données resamplées pour garantir une reconnaissance équitable de chaque niveau de risque.
-
-
+* **Prédiction sur les données** de validation on utilise le modèle entraîné sur les données SMOTE.
+* **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
+* **Conclusion** Le modèle est toujours performant accuracy 91% , mais il échoue toujours sur la détection des 2 cas high.
 
 
 
