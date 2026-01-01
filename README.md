@@ -23,6 +23,8 @@ Pour préparer les données, j'ai mis en place les étapes suivantes :
 * **Encodage :** On transforme les réponses en vecteurs via le One-Hot encoding pour les 3 catégories.
 * **Construction et entraînement du réseau de neurones** : Initialisation du modèle, démarrage de l'entraînement.
 * **Évaluation des performances et analyse du modèle** : Matrice de confusion, Calcul des métriques (Accuracy, Précision, Recall, F1-score).
+* **Conclusion** : Le modèle précis mais aveugle aux cas critiques
+* Le modèle ne peut pas être déployé en l'état car il présente un risque de sécurité présence de faux négatifs sur les cas graves.
 
 #### 3. Architecture du Modèle Deep Learning
 **J'ai utilisé un réseau de neurones artificiels avec **TensorFlow/Keras** :
