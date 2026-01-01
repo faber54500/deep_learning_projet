@@ -98,14 +98,16 @@ Cette approche permet d'améliorer la précision de la classe "High" en passant 
 
 ---
 
-### 🏁 Conclusion
+### Conclusion
 Ce travail m'a permis de démontrer que la performance d'un projet médical ne repose pas uniquement sur la précision globale, mais sur la sécurité des prédictions. 
 
-En associant la puissance du **Deep Learning** à la robustesse d'un **Balanced Random Forest**, **j'ai créé** une solution fiable. L'ajustement du seuil de décision que **j'ai effectué** transforme l'algorithme en un véritable outil de protection, assurant une détection exhaustive des cas critiques pour le cabinet médical.
+En associant la puissance du **Deep Learning** à la robustesse d'un **Balanced Random Forest** permet d'obtenir une solution fiable. 
+L'ajustement du seuil de décision assure une détection des cas critiques pour le cabinet médical.
 
 ---
 
-### 📂 Structure du dépôt
-* `deep_learning.ipynb` : Mon programme complet avec analyses et graphiques.
-* `cancer-risk-factors.csv` : Le jeu de données source.
-* `requirements.txt` : Bibliothèques nécessaires (TensorFlow, Scikit-Learn, Imbalanced-Learn).
+### Structure du dépôt
+* `cancer-risk-factors.csv` : Jeu de données source.
+* `deep_learning.ipynb` : Programme complet avec analyses et graphiques.
+* 'read me' : Résumé du projet 
+
