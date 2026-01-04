@@ -1,4 +1,4 @@
-## <font color=darkred> **Deep Learning** : Classification du risque cancérologique
+## <font color=darkred> **Deep Learning** : classification du risque cancérologique
 
 ###  Introduction et contexte
 * Ce projet s'inscrit dans une démarche d'aide au diagnostic pour un cabinet médical.
@@ -9,7 +9,7 @@
 
 ---
 
-### Démarche Méthodologique 
+### Démarche méthodologique 
 
 #### 1. Analyse exploratoire des données 
 Pour préparer les données, j'ai mis en place les étapes suivantes :
