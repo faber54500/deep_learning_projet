@@ -1,6 +1,6 @@
-## <font color=darkred> **Deep Learning** : Classification du Risque Cancérologique
+## <font color=darkred> **Deep Learning** : Classification du risque cancérologique
 
-###  Introduction et Contexte
+###  Introduction et contexte
 * Ce projet s'inscrit dans une démarche d'aide au diagnostic pour un cabinet médical.
 * Actuellement, le dépistage du cancer du sein repose principalement sur l'âge des patientes.
 * Cependant, le risque est une donnée multifactorielle qui ne peut se limiter à un seul critère.
